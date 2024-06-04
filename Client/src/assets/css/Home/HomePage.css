@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Acme&family=Alata&family=Exo:ital,wght@0,100..900;1,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Outfit:wght@100..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Righteous&family=Sedan:ital@0;1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Acme&family=Alata&family=Exo:ital,wght@0,100..900;1,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Outfit:wght@100..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Righteous&family=Sedan:ital@0;1&display=swap");
+
+.home-main-div {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+}
+
+.home-insider-main-div {
+  width: 80%;
+  height: 90%;
+  margin-top: 55px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.Welcome-heading {
+  width: 50%;
+  height: 350px;
+}
+
+.Welcome-heading span {
+  font-size: 45px;
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.create-meeting-div {
+  width: 30%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.create-meeting-div p {
+  margin: 10px 0;
+}
+
+.create-meeting-div button {
+  background-color: rgb(0, 159, 29);
+  width: 200px;
+  height: 40px;
+  border-radius: 3px;
+  color: white;
+  font-size: 18px;
+  font-weight: 300;
+  margin: 10px 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.create-meeting-div button:hover {
+  background-color: rgb(0, 0, 0);
+}
+
+@media only screen and (max-width: 550px) {
+
+  .home-insider-main-div {
+    width: 95%;
+    height: 70%;
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .Welcome-heading {
+    width: 90%;
+    height: fit-content;
+
+  }
+
+  .Welcome-heading span {
+    font-size: 30px;
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  .create-meeting-div {
+    width: 99%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+  }
+
+  .create-meeting-div p {
+    width: 99%;
+    margin: 30px 0;
+  }
+
+  .create-meeting-div button {
+    background-color: rgb(0, 159, 29);
+    width: 200px;
+    height: 40px;
+    border-radius: 3px;
+    color: white;
+    font-size: 18px;
+    font-weight: 300;
+    margin: 10px 0;
+  }
+}

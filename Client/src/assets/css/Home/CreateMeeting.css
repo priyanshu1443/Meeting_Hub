@@ -1,0 +1,177 @@
+.createmeeting-main-div {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.createmeeting-insider-div {
+  width: 70%;
+  height: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.meeting-image {
+  border-radius: 10px;
+  width: 50%;
+  height: 90%;
+  background-image: url("../../img/Meeting.gif");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.meeting-fields {
+  width: 35%;
+  height: fit-content;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.meeting-fields p {
+  width: 350px;
+  font-weight: 500;
+  font-size: 20px;
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  padding: 10px 0;
+}
+
+.meeting-details {
+  position: relative;
+  font-size: 15px;
+  margin: 5px 0;
+  width: fit-content;
+  color: rgb(0, 0, 0);
+}
+
+.meeting-link {
+  text-decoration: underline;
+  color: blue;
+  cursor: pointer;
+}
+
+.create-meeting-text {
+  font-size: 12px;
+  color: rgb(74, 74, 74);
+}
+
+.meeting-fields input {
+  border: 2px solid rgb(104, 104, 104);
+  width: 300px;
+  height: 40px;
+  padding: 10px;
+}
+
+.meeting-fields button {
+  border: none;
+  background-color: rgb(0, 159, 29);
+  width: 150px;
+  height: 35px;
+  font-family: "Josefin Sans", sans-serif;
+  color: white;
+  font-weight: 500;
+  font-size: 18px;
+  font-optical-sizing: auto;
+  margin: 20px 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.meeting-fields button:hover {
+  background-color: rgb(0, 65, 65);
+}
+
+#copied-link-div {
+  position: absolute;
+  text-align: center;
+  margin-left: 10px;
+  margin-top: 0px;
+  background-color: rgb(46, 46, 46);
+  font-size: 15px;
+  display: none;
+  border-radius: 10px;
+  width: 70px;
+  color: rgb(255, 255, 255);
+}
+
+@media only screen and (max-width: 550px) {
+  .createmeeting-main-div {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+  }
+
+  .createmeeting-insider-div {
+    width: 99%;
+    height: 60%;
+    margin-top: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .meeting-image {
+    border-radius: 10px;
+    width: 70%;
+    height: 30%;
+    background-image: url("../../img/Meeting.gif");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .meeting-fields {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0;
+  }
+
+  .meeting-fields p {
+    width: 90%;
+    font-weight: 500;
+    font-size: 20px;
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    padding: 10px 0;
+  }
+
+  .meeting-fields input {
+    border: 2px solid rgb(104, 104, 104);
+    width: 80%;
+    height: 40px;
+    padding: 10px;
+  }
+
+  .meeting-fields button {
+    border: none;
+    background-color: rgb(0, 159, 29);
+    width: 150px;
+    height: 35px;
+    color: white;
+    font-weight: 500;
+    margin: 10px 0;
+  }
+
+  .meeting-details {
+    position: relative;
+    font-size: 15px;
+    margin: 5px 0;
+    width: fit-content;
+    color: rgb(0, 0, 0);
+  }
+}

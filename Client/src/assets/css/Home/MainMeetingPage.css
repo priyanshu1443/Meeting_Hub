@@ -1,0 +1,509 @@
+@import url("https://fonts.googleapis.com/css2?family=Acme&family=Alata&family=Exo:ital,wght@0,100..900;1,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Outfit:wght@100..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Righteous&family=Sedan:ital@0;1&display=swap");
+
+.main-meeting-div {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(0, 15, 3);
+}
+
+#raise-hand-text {
+  position: absolute;
+  border-radius: 10px;
+  height: 30px;
+  width: fit-content;
+  right: 20px;
+  display: none;
+  padding: 0 20px;
+  justify-content: center;
+  align-items: center;
+  top: auto;
+  bottom: 20px;
+  z-index: 1;
+  background-color: rgb(32, 32, 32);
+}
+
+#raise-hand-h2 {
+  color: white;
+  font-weight: 500;
+  font-size: 15px;
+  margin: 0;
+}
+
+.meeting-name {
+  position: absolute;
+  left: 40px;
+  top: auto;
+  bottom: 10px;
+}
+
+.meeting-name h3 {
+  color: white;
+}
+
+.insider-meeting-main-div {
+  width: 95%;
+  height: 90%;
+  margin-top: 55px;
+}
+
+.main-screen-div {
+  margin-top: 20px;
+  width: 100%;
+  height: 85%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-video-div {
+  border: 1px solid rgba(43, 43, 43);
+  border-radius: 10px;
+  width: 70%;
+  height: 100%;
+  max-height: 100%;
+  overflow-y: scroll;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+#localVidoPlayer {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  border: none;
+}
+
+.main-participant-div {
+  border: 1px solid rgb(43, 43, 43);
+  width: 25%;
+  height: 100%;
+  overflow-y: scroll;
+  border-radius: 10px;
+}
+
+.chatBox {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+}
+
+.message-box {
+  width: 100%;
+  height: 93%;
+  background-color: white;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+  gap: 2px;
+  color: black;
+}
+
+.chats-div {
+  min-width: 30%;
+  width: fit-content;
+  max-width: 80%;
+  padding: 0 10px;
+  margin: 20px 5px;
+  border-radius: 20px;
+}
+
+.chat-user-name {
+  font-size: 12px;
+  margin: 0 2px;
+  float: right;
+}
+
+.chat-time {
+  font-size: 12px;
+  margin: 0 2px;
+  float: right;
+}
+
+.chat-content {
+  background-color: rgb(0, 86, 86);
+  border-radius: 10px;
+  color: rgb(255, 255, 255);
+  min-width: 10%;
+  width: fit-content;
+  max-width: 100%;
+  height: auto;
+  padding: 5px 10px;
+  margin: 5px 0;
+  text-align: start;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.message-input-div {
+  width: 100%;
+  align-self: flex-end;
+  border-top: 1px solid rgb(173, 173, 173);
+  height: 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.message-input-field {
+  min-height: 100%;
+  height: 100%;
+  max-height: 100%;
+  width: 80%;
+  outline: none;
+  color: black;
+  padding: 0 10px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.message-input-div button {
+  background-color: rgb(0, 159, 0);
+  width: 20%;
+  height: 100%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  transition: all 0.3s ease-in-out;
+}
+
+.message-input-div button:hover {
+  background-color: rgb(0, 0, 0);
+}
+
+.othersUser {
+  border: 1px solid rgb(48, 48, 48);
+  position: relative;
+  border-radius: 10px;
+  height: 30%;
+  width: 30%;
+  margin: 10px;
+  background-image: url("../../img/blackcontacts.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  transition: transform 0.3s, width 0.3s, height 0.3s, margin 0.3s;
+  display: none;
+}
+
+.othersUser.enlarged {
+  position: absolute;
+  background-color: rgb(0, 15, 3);
+  border: none;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.othersUser h2 {
+  position: absolute;
+  bottom: 0;
+  padding: 0 10px;
+  color: rgb(255, 255, 255);
+  margin: 10px 10px;
+  z-index: 1;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.othersUser video {
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hand-raise {
+  position: absolute;
+  bottom: 0;
+  left: auto;
+  right: 0;
+  display: none;
+  color: rgb(255, 255, 255);
+  margin: 10px 10px;
+  z-index: 1;
+  font-size: 15px;
+}
+
+.meeting-controls {
+  width: 50%;
+  margin: 20px auto;
+  height: 70px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.controls-icon-div {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid rgb(65, 65, 65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  position: relative;
+}
+
+.controls-icon-div {
+  font-size: 20px;
+}
+
+.new-message {
+  position: absolute;
+  font-size: 10px;
+  width: 10px;
+  height: 10px;
+  background-color: rgb(200, 255, 0);
+  border-radius: 50%;
+  color: black;
+  right: 10px;
+  top: 5px;
+  z-index: 1;
+  animation: blink 1s linear infinite;
+  display: none;
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+#diconnect-user-meeting {
+  background-color: red;
+  transition: all 0.2s ease-in-out;
+}
+
+.controls-icon-div:hover {
+  border: 1px solid rgb(255, 255, 255);
+}
+
+#chat_participant_area {
+  background-color: rgb(0, 15, 3);
+  color: rgb(255, 255, 255);
+  width: 90%;
+  margin: auto;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+#chat_participant_area_header {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.today-date {
+  width: 90%;
+  margin: auto;
+  font-size: 0.8vw;
+}
+
+#participant_area div {
+  background-color: rgba(0, 86, 86, 0.116);
+  height: 40px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* HTML: <div class="loader"></div> */
+.main-meeting-validation-div {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+  width: 30px;
+  aspect-ratio: 1;
+  background: #554236;
+  display: grid;
+  animation: l4-0 1s infinite linear;
+}
+
+.loader::before,
+.loader::after {
+  content: "";
+  grid-area: 1/1;
+  background: #f77825;
+  animation: inherit;
+  animation-name: l4-1;
+}
+
+.loader::after {
+  background: #60b99a;
+  --s: 60deg;
+}
+
+@keyframes l4-0 {
+
+  0%,
+  20% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(90deg);
+  }
+}
+
+@keyframes l4-1 {
+  50% {
+    transform: rotate(var(--s, 30deg));
+  }
+
+  100% {
+    transform: rotate(0);
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .insider-meeting-main-div {
+    min-width: 380px;
+    width: 95%;
+    height: 90%;
+    margin-top: 55px;
+  }
+
+  .main-screen-div {
+    margin-top: 10px;
+    width: 100%;
+    height: 85%;
+  }
+
+  .main-video-div {
+    border: 2px solid rgba(34, 34, 34, 0.511);
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    overflow-y: scroll;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+  }
+
+  .main-participant-div {
+    border: 1px solid rgb(43, 43, 43);
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    border-radius: 10px;
+    display: none;
+  }
+
+  .chatBox {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .meeting-controls {
+    margin: 0;
+    width: 100%;
+    height: calc(15% - 10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .controls-icon-div {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid rgb(65, 65, 65);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .othersUser {
+    position: relative;
+    border-radius: 10px;
+    height: 30%;
+    width: 40%;
+    margin: 10px;
+    display: none;
+  }
+
+  .othersUser.enlarged {
+    position: absolute;
+    background-color: rgb(0, 15, 3);
+    border: none;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+
+  .othersUser h2 {
+    position: absolute;
+    color: rgb(255, 255, 255);
+    margin: 5px 10px;
+    font-size: 2vw;
+  }
+
+  .othersUser video {
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .meeting-name {
+    position: absolute;
+    left: 20px;
+    top: auto;
+    bottom: 10px;
+  }
+
+  .meeting-name h3 {
+    color: white;
+    font-size: 12px;
+  }
+
+  #raise-hand-text {
+    right: 10px;
+    bottom: 10px;
+  }
+
+  #raise-hand-h2 {
+    color: white;
+    font-weight: 500;
+    font-size: 12px;
+    margin: 0;
+  }
+}

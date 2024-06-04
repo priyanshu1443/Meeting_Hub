@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Acme&family=Alata&family=Exo:ital,wght@0,100..900;1,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lexend+Deca:wght@100..900&family=Outfit:wght@100..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Righteous&family=Sedan:ital@0;1&display=swap");
+
+* {
+  font-family: "Lexend Deca", sans-serif;
+}
+
+.navbar-main-div {
+  width: 100vw;
+  height: 55px;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  background-color: white;
+}
+
+.meeting-hub-heading button {
+  cursor: pointer;
+  font-size: 25px;
+  color: rgb(0, 147, 0);
+  font-family: "Lexend Deca", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+}
+
+@media only screen and (max-width: 550px) {
+  .navbar-main-div {
+    width: 100vw;
+    height: 55px;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    background-color: white;
+  }
+
+  .meeting-hub-heading {
+    width: fit-content;
+    font-size: 25px;
+    color: rgb(0, 147, 0);
+    font-family: "Lexend Deca", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  .meeting-hub-date span {
+    font-size: 12px;
+  }
+}

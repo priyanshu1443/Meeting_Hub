@@ -1,0 +1,150 @@
+.Signup-page-main-div {
+    width: 100vw;
+    height: 100vh;
+    margin: auto;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    color: black;
+}
+
+.signup-page-insider-div {
+    width: 60%;
+    margin: auto;
+    height: fit-content;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.signup-text {
+    text-align: center;
+    width: 40%;
+}
+
+.signup-text span {
+    font-family: "Lexend Deca", sans-serif;
+    font-size: 1vw;
+}
+
+form {
+    border: 1px solid rgb(221, 221, 221);
+    width: 50%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.form-div {
+    width: 90%;
+
+    margin: auto;
+    position: relative;
+}
+
+.form-div label {
+    position: absolute;
+    top: 12px;
+    padding-inline: 5px;
+    left: 10px;
+    background-color: white;
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+
+}
+
+.form-div input {
+    border: 1px solid black;
+    width: 100%;
+    margin: auto;
+    height: 40px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.form-div input:focus {
+    outline-color: rgb(0, 159, 29);
+
+}
+
+.form-button-div {
+    width: 80%;
+    margin: auto;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-button-div button {
+    width: 50%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: rgb(0, 141, 31);
+    color: white;
+}
+
+.google-button-div {
+    width: 30%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}
+
+/* .existing-account-or-new { */
+/* } */
+
+.existing-account-or-new span {
+    font-size: 14px;
+}
+
+.existing-account-or-new button {
+    color: blue;
+    text-decoration: underline;
+}
+
+@media only screen and (max-width: 550px) {
+
+    .signup-page-insider-div {
+        width: 99%;
+        margin: auto;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    form {
+        border: 1px solid rgb(221, 221, 221);
+        width: 90%;
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+
+    .Error {
+        width: 90%;
+        text-align: center;
+    }
+
+    .signup-text {
+        text-align: center;
+        width: 90%;
+    }
+
+    .signup-text span {
+        font-family: "Lexend Deca", sans-serif;
+        font-size: 13px;
+        font-weight: 400;
+    }
+}
