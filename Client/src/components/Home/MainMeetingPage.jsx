@@ -30,6 +30,9 @@ function MainMeetingPage() {
   const [handcolor, setHandColor] = useState(false);
   const [participantsection, setParticipantSection] = useState(false);
   const [openMeet, setOpenMeet] = useState(false);
+  const [main_screen, setMainScreen] = useState(true);
+  const [screen_width, setScreenWidth] = useState(1200);
+
 
 
   const containsSpecialCharacters = (value) => {
@@ -108,6 +111,12 @@ function MainMeetingPage() {
     }
   }, [openMeet]);
 
+  useEffect(() => {
+
+  }, [])
+
+
+
   return (
     <>
       <div id="main" className="main-meeting-div" style={openMeet ? { display: "flex" } : { display: "none" }}>
@@ -119,7 +128,9 @@ function MainMeetingPage() {
             <span id="raise-hand-h2"></span>
           </div>
           <div className="main-screen-div">
-            <div className="main-video-div" id="users">
+            <div className="main-video-div" id="users" style={screen_width < 550 ? main_screen ? { display: "flex" } : { display: "none" } : {}}
+            >
+
               <div id="usertemplate" className="othersUser">
                 <h2 id="me" />
                 <video autoPlay id="localVidoPlayer" muted />
@@ -132,7 +143,8 @@ function MainMeetingPage() {
                 </span>
               </div>
             </div>
-            <div className="main-participant-div text-center text-white ">
+            <div className="main-participant-div text-center text-white " style={screen_width < 550 ? main_screen ? { display: "none" } : { display: "block" } : {}}>
+
               <div
                 className="chatBox"
                 style={
@@ -221,10 +233,13 @@ function MainMeetingPage() {
             <div
               id="message-icon"
               onClick={() => {
+                setScreenWidth(window.innerWidth)
+                setMainScreen(!main_screen)
                 setParticipantSection(true);
               }}
               className="controls-icon-div"
             >
+
               <div className="new-message" id="raise-message-notify"></div>
               <div id="insider-message-icon">
                 <FontAwesomeIcon icon={faMessage} />
@@ -233,6 +248,8 @@ function MainMeetingPage() {
             <div
               id="user-icon"
               onClick={() => {
+                setScreenWidth(window.innerWidth)
+                setMainScreen(!main_screen)
                 setParticipantSection(false);
               }}
               className="controls-icon-div"
