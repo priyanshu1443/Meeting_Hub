@@ -25,12 +25,12 @@ export const register = async (req, res) => {
 export const login = async (req, res) => {
     const { email, password } = req.body
     if (!email && !password) {
-        res.send(200).send({ Message: "Please provide an Email and Password" })
+        res.send(401).send({ message: "Please provide an Email and Password" })
     }
     try {
         const user = await Registration.findOne({ email })
         if (!user) {
-            res.status(200).send({ Message: "UserName and passsword is incorrrect" })
+            res.status(401).send({ message: "UserName and passsword is incorrrect" })
             return
         }
         const matchPassword = await bcrypt.compare(password, user.password)

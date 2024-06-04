@@ -13,8 +13,10 @@ function Login() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [count, setCount] = useState(3);
+  const [waiting, setWaiting] = useState(false);
 
   const handlelogin = (e) => {
+    setWaiting(true)
     e.preventDefault();
     axios({
       method: "post",
@@ -22,6 +24,7 @@ function Login() {
       data: { email: email, password: password },
     })
       .then((res) => {
+        console.log(res)
         sessionStorage.setItem(
           "Auth_Token",
           JSON.stringify(res.data.data.token)
@@ -31,9 +34,12 @@ function Login() {
           JSON.stringify(res.data.data.user_id)
         );
         sessionStorage.setItem("name", JSON.stringify(res.data.data.name));
+        setWaiting(false)
         navigate("/");
       })
       .catch((error) => {
+        console.log(error)
+        setWaiting(false)
         setError(error?.response?.data?.message);
         let new_count = 3;
         const intervalId = setInterval(() => {
@@ -129,7 +135,7 @@ function Login() {
             />
           </div>
           <div className="form-button-div">
-            <button type="submit">Sign in</button>
+            <button type="submit" disabled={waiting}>{waiting ? "please wait..." : "Sign in"}</button>
           </div>
 
           <div className="google-button-div">

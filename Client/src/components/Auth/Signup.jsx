@@ -9,9 +9,11 @@ function Signup() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
+  const [waiting, setWaiting] = useState(false);
   const navigate = useNavigate();
 
   const handleSignup = (e) => {
+    setWaiting(true)
     e.preventDefault();
     axios({
       method: "post",
@@ -25,10 +27,12 @@ function Signup() {
     })
       .then((res) => {
         if (res.status === 201) {
+          setWaiting(false)
           navigate("/Auth")
         }
       })
       .catch((error) => {
+        setWaiting(false)
         setError(error?.response?.data?.message)
         setTimeout(() => {
           setError("");
@@ -96,7 +100,7 @@ function Signup() {
             />
           </div>
           <div className="form-button-div">
-            <button type="submit">Signup</button>
+            <button type="submit" disabled={waiting}>{waiting ? "please wait..." : "Signup"}</button>
           </div>
           <div className="existing-account-or-new">
             <span>

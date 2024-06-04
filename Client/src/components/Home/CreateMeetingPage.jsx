@@ -11,6 +11,7 @@ function CreateMeetingPage() {
   const [meetingName, setMeetingName] = useState("");
   const [meeting_created, setMeetingCreated] = useState(false);
   const [meetingID, setMeetingId] = useState("");
+  const [waiting, setWaiting] = useState(false);
 
   const containsSpecialCharacters = (value) => {
 
@@ -18,6 +19,7 @@ function CreateMeetingPage() {
     return pattern.test(value);
   };
   const handleMeetingCreation = async () => {
+    setWaiting(true)
     await axios({
       method: "post",
       url: `${url}/api/createmeeting`,
@@ -30,8 +32,10 @@ function CreateMeetingPage() {
         setMeetingId(response.data.meetingId);
         setMeetingName(response.data.meetingName);
         setMeetingCreated(true);
+        setWaiting(false)
       })
       .catch((error) => {
+        setWaiting(false)
         console.log(error)
       });
   };
@@ -105,7 +109,8 @@ function CreateMeetingPage() {
                 placeholder="Enter meeting name"
               />
               <br />
-              <button onClick={handleMeetingCreation}>create</button>
+              {/* <button onClick={handleMeetingCreation}>create</button> */}
+              <button onClick={handleMeetingCreation} disabled={waiting}>{waiting ? "creating..." : "create"}</button>
               <br />
             </>
           )}
