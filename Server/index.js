@@ -118,6 +118,34 @@ io.on("connection", (socket) => {
         }
     });
 
+    socket.on("raise_hand", () => {
+        var raisHandUser = userConnection.find((p) => p.connectionId == socket.id);
+        for (const users of userConnection) {
+
+            if (users.connectionId != socket.id) {
+                var to = users.connectionId;
+
+                socket.to(to).emit("hand_raise", {
+                    by: socket.id,
+                    name: raisHandUser.user_id,
+
+                });
+            }
+        }
+    });
+
+    socket.on("videoAndScreenShare", (data) => {
+        for (const users of userConnection) {
+            if (users.connectionId != socket.id) {
+                var to = users.connectionId
+                socket.to(to).emit("videoAndScreenShare", {
+                    by: socket.id,
+                    video: data,
+                })
+            }
+        }
+    })
+
     socket.on("disconnect", () => {
         var disUser = userConnection.find((p) => p.connectionId == socket.id);
         if (disUser) {
@@ -135,21 +163,6 @@ io.on("connection", (socket) => {
                         uNumber: userNumberAfterLeave,
                     });
             });
-        }
-    });
-    socket.on("raise_hand", () => {
-        var raisHandUser = userConnection.find((p) => p.connectionId == socket.id);
-        for (const users of userConnection) {
-
-            if (users.connectionId != socket.id) {
-                var to = users.connectionId;
-
-                socket.to(to).emit("hand_raise", {
-                    by: socket.id,
-                    name: raisHandUser.user_id,
-
-                });
-            }
         }
     });
 });
